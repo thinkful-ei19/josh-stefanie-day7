@@ -25,7 +25,7 @@ const fetchVideos = function (searchTerm, callback) {
   let fetchedVideo = $.getJSON(BASE_URL, query, callback);
 };
 fetchVideos('Michael Jackson', function (data) {
-  //console.log(decorateResponse(data));
+  console.log(decorateResponse(data));
 });
 // TASK:
 // 1. Create a `decorateResponse` function that receives the Youtube API response
@@ -50,11 +50,11 @@ const decorateResponse = function (fetchedVideo) {
 // 1. Create a `generateVideoItemHtml` function that receives the decorated object
 // 2. Using the object, return an HTML string containing all the expected data
 // TEST IT!
-const generateVideoItemHtml = function (myArray) {
-  console.log( `<span>${myArray.id}</span>
-            <span>${myArray.title}</span>
-            <img src='${myArray.thumbnail}'>
-        </li>`);
+const generateVideoItemHtml = function (video) {
+  return `<span>${video.id}</span>
+            <span>${video.title}</span>
+            <img src='${video.thumbnail}'>
+        </li>`;
 };
 
 generateVideoItemHtml();
@@ -64,7 +64,7 @@ generateVideoItemHtml();
 // objects and sets the array as the value held in store.items
 // TEST IT!
 const addVideosToStore = function (videos) {
-
+  store.videos = videos;
 };
 
 // TASK:
@@ -72,9 +72,12 @@ const addVideosToStore = function (videos) {
 // 2. Map through `store.videos`, sending each `video` through your `generateVideoItemHtml`
 // 3. Add your array of DOM elements to the appropriate DOM element
 // TEST IT!
-const render = function () {
 
+/*const render = function () {
+    const videoGroup = store.videos.map(video => generateVideoItemHtml(video));{
+        ${'.results'}.html(videoGroup);
 };
+}*/
 
 // TASK:
 // 1. Create a `handleFormSubmit` function that adds an event listener to the form
