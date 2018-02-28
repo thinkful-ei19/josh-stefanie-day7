@@ -103,7 +103,7 @@ const render = function () {
 const handleFormSubmit = function () {
   $('form').submit(function(){
     event.preventDefault();
-    const newSearchInput = $('.search-term');
+    const newSearchInput = $('#search-term');
     const newSearchTerm = newSearchInput.val();
     newSearchInput.val('');
     fetchVideos(newSearchTerm, function(response){
