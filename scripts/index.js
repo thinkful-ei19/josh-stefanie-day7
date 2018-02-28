@@ -51,13 +51,20 @@ const decorateResponse = function (fetchedVideo) {
 // 2. Using the object, return an HTML string containing all the expected data
 // TEST IT!
 const generateVideoItemHtml = function (video) {
-  return `<span>${video.id}</span>
-            <span>${video.title}</span>
-            <img src='${video.thumbnail}'>
-        </li>`;
+  return `
+  <li>
+    <span>${video.id}</span>
+    <span>${video.title}</span>
+    <img src='${video.thumbnail}'>
+  </li>`;
 };
+const obj={
+  id: 'fjdfd',
+  title: 'abkhfb',
+  thumbnail: 'sjbvsjbdkfb'
+};
+console.log(generateVideoItemHtml(obj));
 
-generateVideoItemHtml();
 
 // TASK:
 // 1. Create a `addVideosToStore` function that receives an array of decorated video 
